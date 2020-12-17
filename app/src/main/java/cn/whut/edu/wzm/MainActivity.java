@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private final DecimalFormat df = new DecimalFormat("000");
     private final SimpleDateFormat sdf = new SimpleDateFormat("yyyy_MM_dd_HH_mm");
 
+    // TODO 设定抓取区域的左下角经纬度和右上角角经纬度
     // 左下角经纬度
     private static final LatLng leftBottomPosition = new LatLng(29.476833, 106.423548);
     // 右上角角经纬度
@@ -90,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
             LatLng currentValue = entry.getValue();
 
             System.out.println("update " + currentKey);
+
+            // TODO 设定地图标尺，经测试200米为最佳，其他尺度可能有加载问题
             updateMapStatus(baiduMap, currentValue, 16);
 
             try {
@@ -159,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
             this.requestPermissions(PERMISSIONS_STORAGE, REQUEST_EXTERNAL_STORAGE);
         }
 
+        // TODO 设定为了截取整个区域，需要移屏的次数
         int stepCount = 5;
         double latitudeMargin = rightTopPosition.latitude - leftBottomPosition.latitude;
         double longitudeMargin = rightTopPosition.longitude - leftBottomPosition.longitude;
@@ -189,6 +193,7 @@ public class MainActivity extends AppCompatActivity {
 
         List<int[]> taskList = new ArrayList<>();
 
+        // TODO 设定自动抓取的时间，如果设定的时间小于当前时间，会自动开始执行
         taskList.add(new int[]{14, 32});
         taskList.add(new int[]{15, 32});
         taskList.add(new int[]{16, 32});

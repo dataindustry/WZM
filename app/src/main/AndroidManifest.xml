@@ -21,6 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- TODO 添加开发者KEY -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="<开发者KEY，请去http://lbsyun.baidu.com/申请>" />
